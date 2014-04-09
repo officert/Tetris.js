@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="content/bootstrap/bootstrap.min.css" />
+    <style type="text/css">
+        #wrapper {
+            margin-top: 50px;
+            padding-top: 20px;
+        }
+
+        #tetris {
+            float: left;
+            margin-right: 20px;
+        }
+
+        #tetris-score-wrapper {
+            border: 1px solid black;
+            margin: 0 0 20px 0;
+            padding: 10px;
+            width: 217px;
+        }
+
+            #tetris-score-wrapper > h3 {
+                margin: 0 10px 0 0;
+                float: left;
+            }
+
+            #tetris-score-wrapper > #tetris-score {
+                padding: 5px;
+            }
+
+        #tetris-preview {
+        }
+
+        /* Tetris Board */
+        #tetris-board {
+            border: 1px solid black;
+            position: absolute;
+        }
+
+        /* Game Over Screen */
+        #tetris-gameover {
+            border: 1px solid black;
+            background: black;
+            opacity: 0.5;
+            z-index: 100;
+            position: absolute;
+        }
+
+        /* Paused Screen */
+        #tetris-paused {
+            border: 1px solid black;
+            z-index: 100;
+            position: absolute;
+        }
+
+        .tetris-screen-backdrop {
+            background: #C3D8D8;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tetris-controls {
+        }
+        .tetris-controls  > h3 {
+            text-align:center;
+        }
+        .tetris-controls  > ul {
+            margin-left:65px;
+            list-style:none;
+        }
+
+        .tetris-screen-header {
+            text-align: center;
+            padding: 100px 0 0 0;
+            font-weight: bold;
+            font-size: 34px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">TETRIS</a>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper" class="container">
+        <div id="tetris" class="col-md-4 col-md-offset-2">
+            <canvas id="tetris-board"></canvas>
+            <div id="tetris-gameover">
+                <h2 class="tetris-screen-header">GAME OVER</h2>
+                <div class="tetris-screen-backdrop"></div>
+            </div>
+            <div id="tetris-paused">
+                <h2 class="tetris-screen-header">PAUSED</h2>
+                <div class="tetris-controls">
+                    <h3>Controls</h3>
+                    <ul>
+                        <li><strong>Left Arrow</strong> : Move Left</li>
+                        <li><strong>Right Arrow</strong> : Move Right</li>
+                        <li><strong>Down Arrow</strong> : Move Down</li>
+                        <li><strong>Up Arrow</strong> : Rotate</li>
+                        <li><strong>Space</strong> : Hard Drop</li>
+                        <li><strong>P</strong> : Pause Game</li>
+                    </ul>
+                </div>
+                <div class="tetris-screen-backdrop"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div id="tetris-score-wrapper" class="clearfix">
+                <h3>Score:</h3>
+                <div id="tetris-score"></div>
+            </div>
+            <div id="tetris-preview">
+            </div>
+        </div>
+    </div>
+    <script src="scripts/libs/jquery-1.8.2.js"></script>
+    <script src="scripts/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="scripts/tetris.js"></script>
+</body>
+</html>
